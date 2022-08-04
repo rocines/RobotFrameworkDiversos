@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220415 12:05:51.376" rpa="false" schemaversion="3">
+<suite id="s1" name="Teste" source="C:\CursoUdemy\api_4devs\teste.robot">
+<test id="s1-t1" name="Validar o campo Status Code (Resultado esperado deve ser 200)" line="41">
+<kw name="Dado que tenha sido realizado o POST na API 4DEVS">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>API4DEVS</arg>
+<arg>${url_api}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220415 12:05:51.634" level="INFO">Creating Session using : alias=API4DEVS, url=https://www.4devs.com.br/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220415 12:05:51.633" endtime="20220415 12:05:51.634"/>
+</kw>
+<status status="PASS" starttime="20220415 12:05:51.633" endtime="20220415 12:05:51.634"/>
+</kw>
+<kw name="E tenha retornado o ResponseBody">
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${RESPOSTA}</var>
+<arg>API4DEVS</arg>
+<arg>ferramentas_online.php</arg>
+<arg>data=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20220415 12:05:52.381" level="INFO">POST Request : url=https://www.4devs.com.br/ferramentas_online.php 
+ path_url=/ferramentas_online.php 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '36', 'Content-Type': 'application/x-www-form-urlencoded'} 
+ body=acao=gerar_pessoa&amp;pontuacao=N&amp;sexo=H 
+ </msg>
+<msg timestamp="20220415 12:05:52.381" level="INFO">POST Response : url=https://www.4devs.com.br/ferramentas_online.php 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Fri, 15 Apr 2022 15:05:51 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'PHP/5.6.37', 'Cache-Control': 'max-age=2592000', 'Vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'X-UA-Compatible': 'IE=edge', 'X-Content-Type-Options': 'nosniff', 'Accept-Ranges': 'bytes', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains; preload', 'X-Frame-Options': 'SAMEORIGIN'} 
+ body={ "nome": "Limite Mínimo a ser gerado é 1 pessoa" }
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Nome:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="Nome" id="nome" value="Breno e Paulo Pães e Doces Ltda" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 columns"&gt;&lt;img id="bt_copy_nome" src="imagens/copy_clipboard.png" data-clipboard-target="nome" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;CNPJ:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="CNPJ" id="cnpj" value="38565656000124" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_cnpj" src="imagens/copy_clipboard.png" data-clipboard-target="cnpj" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Inscrição Estadual:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="Inscrição Estadual" id="ie" value="" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_ie" src="imagens/copy_clipboard.png" data-clipboard-target="ie" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Data de Abertura:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-2 columns"&gt;&lt;input type="text" title="Data de Abertura" id="data_abertura" value="05/08/2022" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-7 columns"&gt;&lt;img id="bt_copy_data_abertura" src="imagens/copy_clipboard.png" data-clipboard-target="data_abertura" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Site:&lt;/strong&gt;
+                &lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="Site" id="site" value="www.brenoepaulopaesedocesltda.com.br" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 columns"&gt;&lt;img id="bt_copy_site" src="imagens/copy_clipboard.png" data-clipboard-target="site" class="botao_copiar" title="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;E-Mail:&lt;/strong&gt;
+                &lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="E-Mail" id="email" value="auditoria@brenoepaulopaesedocesltda.com.br" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 columns"&gt;&lt;img id="bt_copy_email" src="imagens/copy_clipboard.png" data-clipboard-target="email" class="botao_copiar" title="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;CEP:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-2 columns"&gt;&lt;input type="text" title="CEP" id="cep" value="78099451" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-7 columns"&gt;&lt;img id="bt_copy_cep" src="imagens/copy_clipboard.png" data-clipboard-target="cep" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Endereço:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="Endereço" id="endereco" value="Rua 19" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-2 columns"&gt;&lt;img id="bt_copy_endereco" src="imagens/copy_clipboard.png" data-clipboard-target="endereco" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Número:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-2 columns"&gt;&lt;input type="text" title="Número" id="numero" value="260" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-7 columns"&gt;&lt;img id="bt_copy_numero" src="imagens/copy_clipboard.png" data-clipboard-target="numero" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Bairro:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="Bairro" id="bairro" value="Parque Nova Esperança III" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-2 columns"&gt;&lt;img id="bt_copy_bairro" src="imagens/copy_clipboard.png" data-clipboard-target="bairro" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Cidade:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="Cidade" id="cidade" value="Cuiabá" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-2 columns"&gt;&lt;img id="bt_copy_cidade" src="imagens/copy_clipboard.png" data-clipboard-target="cidade" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Estado:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-1 columns"&gt;&lt;input type="text" title="Estado" id="estado" value="MT" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-8 columns"&gt;&lt;img id="bt_copy_estado" src="imagens/copy_clipboard.png" data-clipboard-target="estado" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Telefone:&lt;/strong&gt;
+                &lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="Telefone Fixo" id="telefone_fixo" value="6539104693" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_telefone" src="imagens/copy_clipboard.png" data-clipboard-target="telefone_fixo" class="botao_copiar" title="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Celular:&lt;/strong&gt;
+                &lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="Celular" id="celular" value="65998853419" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_celular" src="imagens/copy_clipboard.png" data-clipboard-target="celular" class="botao_copiar" title="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt; 
+ </msg>
+<msg timestamp="20220415 12:05:52.381" level="INFO">C:\Users\rocines.neto\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1043: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.4devs.com.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20220415 12:05:52.382" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220415 12:05:51.635" endtime="20220415 12:05:52.382"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${RESPOSTA}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220415 12:05:52.382" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220415 12:05:52.382" endtime="20220415 12:05:52.383"/>
+</kw>
+<status status="PASS" starttime="20220415 12:05:51.635" endtime="20220415 12:05:52.383"/>
+</kw>
+<kw name="Então deve retornar o status code 200">
+<kw name="Convert To String" library="BuiltIn">
+<var>${code}</var>
+<arg>${RESPOSTA.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20220415 12:05:52.385" level="INFO">${code} = 200</msg>
+<status status="PASS" starttime="20220415 12:05:52.384" endtime="20220415 12:05:52.385"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220415 12:05:52.385" endtime="20220415 12:05:52.385"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220415 12:05:52.386" endtime="20220415 12:05:52.386"/>
+</kw>
+<status status="PASS" starttime="20220415 12:05:52.384" endtime="20220415 12:05:52.386"/>
+</kw>
+<status status="PASS" starttime="20220415 12:05:51.631" endtime="20220415 12:05:52.387"/>
+</test>
+<test id="s1-t2" name="Validar se o campo Idade consta do ResponseBody (Resultado esperado deve ser Sucesso)" line="45">
+<kw name="Dado que tenha sido realizado o POST na API 4DEVS">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>API4DEVS</arg>
+<arg>${url_api}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220415 12:05:52.390" level="INFO">Creating Session using : alias=API4DEVS, url=https://www.4devs.com.br/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220415 12:05:52.390" endtime="20220415 12:05:52.391"/>
+</kw>
+<status status="PASS" starttime="20220415 12:05:52.390" endtime="20220415 12:05:52.391"/>
+</kw>
+<kw name="E tenha sido obtido o valor do campo Idade">
+<kw name="Convert To String" library="BuiltIn">
+<var>${idade}</var>
+<arg>${RESPOSTA.json()["idade"]}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20220415 12:05:52.394" level="FAIL">Resolving variable '${RESPOSTA.json()["idade"]}' failed: JSONDecodeError: [Errno Extra data] { "nome": "Limite Mínimo a ser gerado é 1 pessoa" }
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Nome:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="Nome" id="nome" value="Breno e Paulo Pães e Doces Ltda" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 columns"&gt;&lt;img id="bt_copy_nome" src="imagens/copy_clipboard.png" data-clipboard-target="nome" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;CNPJ:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="CNPJ" id="cnpj" value="38565656000124" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_cnpj" src="imagens/copy_clipboard.png" data-clipboard-target="cnpj" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Inscrição Estadual:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="Inscrição Estadual" id="ie" value="" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_ie" src="imagens/copy_clipboard.png" data-clipboard-target="ie" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Data de Abertura:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-2 columns"&gt;&lt;input type="text" title="Data de Abertura" id="data_abertura" value="05/08/2022" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-7 columns"&gt;&lt;img id="bt_copy_data_abertura" src="imagens/copy_clipboard.png" data-clipboard-target="data_abertura" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Site:&lt;/strong&gt;
+                &lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="Site" id="site" value="www.brenoepaulopaesedocesltda.com.br" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 columns"&gt;&lt;img id="bt_copy_site" src="imagens/copy_clipboard.png" data-clipboard-target="site" class="botao_copiar" title="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;E-Mail:&lt;/strong&gt;
+                &lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="E-Mail" id="email" value="auditoria@brenoepaulopaesedocesltda.com.br" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 columns"&gt;&lt;img id="bt_copy_email" src="imagens/copy_clipboard.png" data-clipboard-target="email" class="botao_copiar" title="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;CEP:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-2 columns"&gt;&lt;input type="text" title="CEP" id="cep" value="78099451" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-7 columns"&gt;&lt;img id="bt_copy_cep" src="imagens/copy_clipboard.png" data-clipboard-target="cep" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Endereço:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="Endereço" id="endereco" value="Rua 19" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-2 columns"&gt;&lt;img id="bt_copy_endereco" src="imagens/copy_clipboard.png" data-clipboard-target="endereco" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Número:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-2 columns"&gt;&lt;input type="text" title="Número" id="numero" value="260" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-7 columns"&gt;&lt;img id="bt_copy_numero" src="imagens/copy_clipboard.png" data-clipboard-target="numero" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Bairro:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="Bairro" id="bairro" value="Parque Nova Esperança III" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-2 columns"&gt;&lt;img id="bt_copy_bairro" src="imagens/copy_clipboard.png" data-clipboard-target="bairro" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Cidade:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="Cidade" id="cidade" value="Cuiabá" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-2 columns"&gt;&lt;img id="bt_copy_cidade" src="imagens/copy_clipboard.png" data-clipboard-target="cidade" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Estado:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-1 columns"&gt;&lt;input type="text" title="Estado" id="estado" value="MT" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-8 columns"&gt;&lt;img id="bt_copy_estado" src="imagens/copy_clipboard.png" data-clipboard-target="estado" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Telefone:&lt;/strong&gt;
+                &lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="Telefone Fixo" id="telefone_fixo" value="6539104693" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_telefone" src="imagens/copy_clipboard.png" data-clipboard-target="telefone_fixo" class="botao_copiar" title="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Celular:&lt;/strong&gt;
+                &lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="Celular" id="celular" value="65998853419" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_celular" src="imagens/copy_clipboard.png" data-clipboard-target="celular" class="botao_copiar" title="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;: 64</msg>
+<status status="FAIL" starttime="20220415 12:05:52.391" endtime="20220415 12:05:52.394"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${idade}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" starttime="20220415 12:05:52.394" endtime="20220415 12:05:52.394"/>
+</kw>
+<status status="FAIL" starttime="20220415 12:05:52.391" endtime="20220415 12:05:52.395"/>
+</kw>
+<kw name="Então deve ser verificado se campo Idade consta no ResponseBody">
+<status status="NOT RUN" starttime="20220415 12:05:52.396" endtime="20220415 12:05:52.396"/>
+</kw>
+<status status="FAIL" starttime="20220415 12:05:52.389" endtime="20220415 12:05:52.397">Resolving variable '${RESPOSTA.json()["idade"]}' failed: JSONDecodeError: [Errno Extra data] { "nome": "Limite Mínimo a ser gerado é 1 pessoa" }
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Nome:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="Nome" id="nome" value="Breno e Paulo Pães e Doces Ltda" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 columns"&gt;&lt;img id="bt_copy_nome" src="imagens/copy_clipboard.png" data-clipboard-target="nome" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;CNPJ:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="CNPJ" id="cnpj" value="38565656000124" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_cnpj...
+    [ Message content over the limit has been removed. ]
+                &lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="Telefone Fixo" id="telefone_fixo" value="6539104693" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_telefone" src="imagens/copy_clipboard.png" data-clipboard-target="telefone_fixo" class="botao_copiar" title="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Celular:&lt;/strong&gt;
+                &lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="Celular" id="celular" value="65998853419" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_celular" src="imagens/copy_clipboard.png" data-clipboard-target="celular" class="botao_copiar" title="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;: 64</status>
+</test>
+<test id="s1-t3" name="Validar se o valor do campo sexo do ResponseBody é igual a Masculino (Resultado esperado deve ser Sucesso)" line="49">
+<kw name="Dado que tenha sido realizado o POST na API 4DEVS">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>API4DEVS</arg>
+<arg>${url_api}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220415 12:05:52.402" level="INFO">Creating Session using : alias=API4DEVS, url=https://www.4devs.com.br/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220415 12:05:52.402" endtime="20220415 12:05:52.402"/>
+</kw>
+<status status="PASS" starttime="20220415 12:05:52.402" endtime="20220415 12:05:52.402"/>
+</kw>
+<kw name="E tenha sido obtido o valor do campo Sexo">
+<kw name="Convert To String" library="BuiltIn">
+<var>${sexo}</var>
+<arg>${RESPOSTA.json()["sexo"]}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20220415 12:05:52.403" level="FAIL">Resolving variable '${RESPOSTA.json()["sexo"]}' failed: JSONDecodeError: [Errno Extra data] { "nome": "Limite Mínimo a ser gerado é 1 pessoa" }
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Nome:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="Nome" id="nome" value="Breno e Paulo Pães e Doces Ltda" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 columns"&gt;&lt;img id="bt_copy_nome" src="imagens/copy_clipboard.png" data-clipboard-target="nome" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;CNPJ:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="CNPJ" id="cnpj" value="38565656000124" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_cnpj" src="imagens/copy_clipboard.png" data-clipboard-target="cnpj" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Inscrição Estadual:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="Inscrição Estadual" id="ie" value="" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_ie" src="imagens/copy_clipboard.png" data-clipboard-target="ie" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Data de Abertura:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-2 columns"&gt;&lt;input type="text" title="Data de Abertura" id="data_abertura" value="05/08/2022" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-7 columns"&gt;&lt;img id="bt_copy_data_abertura" src="imagens/copy_clipboard.png" data-clipboard-target="data_abertura" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Site:&lt;/strong&gt;
+                &lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="Site" id="site" value="www.brenoepaulopaesedocesltda.com.br" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 columns"&gt;&lt;img id="bt_copy_site" src="imagens/copy_clipboard.png" data-clipboard-target="site" class="botao_copiar" title="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;E-Mail:&lt;/strong&gt;
+                &lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="E-Mail" id="email" value="auditoria@brenoepaulopaesedocesltda.com.br" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 columns"&gt;&lt;img id="bt_copy_email" src="imagens/copy_clipboard.png" data-clipboard-target="email" class="botao_copiar" title="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;CEP:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-2 columns"&gt;&lt;input type="text" title="CEP" id="cep" value="78099451" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-7 columns"&gt;&lt;img id="bt_copy_cep" src="imagens/copy_clipboard.png" data-clipboard-target="cep" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Endereço:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="Endereço" id="endereco" value="Rua 19" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-2 columns"&gt;&lt;img id="bt_copy_endereco" src="imagens/copy_clipboard.png" data-clipboard-target="endereco" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Número:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-2 columns"&gt;&lt;input type="text" title="Número" id="numero" value="260" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-7 columns"&gt;&lt;img id="bt_copy_numero" src="imagens/copy_clipboard.png" data-clipboard-target="numero" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Bairro:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="Bairro" id="bairro" value="Parque Nova Esperança III" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-2 columns"&gt;&lt;img id="bt_copy_bairro" src="imagens/copy_clipboard.png" data-clipboard-target="bairro" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Cidade:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="Cidade" id="cidade" value="Cuiabá" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-2 columns"&gt;&lt;img id="bt_copy_cidade" src="imagens/copy_clipboard.png" data-clipboard-target="cidade" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Estado:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-1 columns"&gt;&lt;input type="text" title="Estado" id="estado" value="MT" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-8 columns"&gt;&lt;img id="bt_copy_estado" src="imagens/copy_clipboard.png" data-clipboard-target="estado" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Telefone:&lt;/strong&gt;
+                &lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="Telefone Fixo" id="telefone_fixo" value="6539104693" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_telefone" src="imagens/copy_clipboard.png" data-clipboard-target="telefone_fixo" class="botao_copiar" title="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Celular:&lt;/strong&gt;
+                &lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="Celular" id="celular" value="65998853419" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_celular" src="imagens/copy_clipboard.png" data-clipboard-target="celular" class="botao_copiar" title="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;: 64</msg>
+<status status="FAIL" starttime="20220415 12:05:52.403" endtime="20220415 12:05:52.404"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${sexo}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" starttime="20220415 12:05:52.404" endtime="20220415 12:05:52.404"/>
+</kw>
+<status status="FAIL" starttime="20220415 12:05:52.402" endtime="20220415 12:05:52.404"/>
+</kw>
+<kw name="Então o campo Sexo deve ser igual a Masculino">
+<status status="NOT RUN" starttime="20220415 12:05:52.405" endtime="20220415 12:05:52.405"/>
+</kw>
+<status status="FAIL" starttime="20220415 12:05:52.401" endtime="20220415 12:05:52.405">Resolving variable '${RESPOSTA.json()["sexo"]}' failed: JSONDecodeError: [Errno Extra data] { "nome": "Limite Mínimo a ser gerado é 1 pessoa" }
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Nome:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="Nome" id="nome" value="Breno e Paulo Pães e Doces Ltda" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 columns"&gt;&lt;img id="bt_copy_nome" src="imagens/copy_clipboard.png" data-clipboard-target="nome" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;CNPJ:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="CNPJ" id="cnpj" value="38565656000124" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_cnpj...
+    [ Message content over the limit has been removed. ]
+                &lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="Telefone Fixo" id="telefone_fixo" value="6539104693" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_telefone" src="imagens/copy_clipboard.png" data-clipboard-target="telefone_fixo" class="botao_copiar" title="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Celular:&lt;/strong&gt;
+                &lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="Celular" id="celular" value="65998853419" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_celular" src="imagens/copy_clipboard.png" data-clipboard-target="celular" class="botao_copiar" title="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;: 64</status>
+</test>
+<test id="s1-t4" name="Armazenar o campo CPF do ResponseBody em uma variável nomeada CPF" line="53">
+<kw name="Dado que tenha sido realizado o POST na API 4DEVS">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>API4DEVS</arg>
+<arg>${url_api}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220415 12:05:52.413" level="INFO">Creating Session using : alias=API4DEVS, url=https://www.4devs.com.br/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220415 12:05:52.412" endtime="20220415 12:05:52.413"/>
+</kw>
+<status status="PASS" starttime="20220415 12:05:52.412" endtime="20220415 12:05:52.413"/>
+</kw>
+<kw name="Quando o valor do campo CPF for gravado na variável CPF">
+<kw name="Convert To String" library="BuiltIn">
+<var>${cpf}</var>
+<arg>${RESPOSTA.json()["cpf"]}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20220415 12:05:52.415" level="FAIL">Resolving variable '${RESPOSTA.json()["cpf"]}' failed: JSONDecodeError: [Errno Extra data] { "nome": "Limite Mínimo a ser gerado é 1 pessoa" }
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Nome:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="Nome" id="nome" value="Breno e Paulo Pães e Doces Ltda" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 columns"&gt;&lt;img id="bt_copy_nome" src="imagens/copy_clipboard.png" data-clipboard-target="nome" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;CNPJ:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="CNPJ" id="cnpj" value="38565656000124" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_cnpj" src="imagens/copy_clipboard.png" data-clipboard-target="cnpj" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Inscrição Estadual:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="Inscrição Estadual" id="ie" value="" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_ie" src="imagens/copy_clipboard.png" data-clipboard-target="ie" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Data de Abertura:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-2 columns"&gt;&lt;input type="text" title="Data de Abertura" id="data_abertura" value="05/08/2022" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-7 columns"&gt;&lt;img id="bt_copy_data_abertura" src="imagens/copy_clipboard.png" data-clipboard-target="data_abertura" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Site:&lt;/strong&gt;
+                &lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="Site" id="site" value="www.brenoepaulopaesedocesltda.com.br" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 columns"&gt;&lt;img id="bt_copy_site" src="imagens/copy_clipboard.png" data-clipboard-target="site" class="botao_copiar" title="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;E-Mail:&lt;/strong&gt;
+                &lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="E-Mail" id="email" value="auditoria@brenoepaulopaesedocesltda.com.br" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 columns"&gt;&lt;img id="bt_copy_email" src="imagens/copy_clipboard.png" data-clipboard-target="email" class="botao_copiar" title="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;CEP:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-2 columns"&gt;&lt;input type="text" title="CEP" id="cep" value="78099451" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-7 columns"&gt;&lt;img id="bt_copy_cep" src="imagens/copy_clipboard.png" data-clipboard-target="cep" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Endereço:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="Endereço" id="endereco" value="Rua 19" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-2 columns"&gt;&lt;img id="bt_copy_endereco" src="imagens/copy_clipboard.png" data-clipboard-target="endereco" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Número:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-2 columns"&gt;&lt;input type="text" title="Número" id="numero" value="260" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-7 columns"&gt;&lt;img id="bt_copy_numero" src="imagens/copy_clipboard.png" data-clipboard-target="numero" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Bairro:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="Bairro" id="bairro" value="Parque Nova Esperança III" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-2 columns"&gt;&lt;img id="bt_copy_bairro" src="imagens/copy_clipboard.png" data-clipboard-target="bairro" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Cidade:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="Cidade" id="cidade" value="Cuiabá" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-2 columns"&gt;&lt;img id="bt_copy_cidade" src="imagens/copy_clipboard.png" data-clipboard-target="cidade" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Estado:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-1 columns"&gt;&lt;input type="text" title="Estado" id="estado" value="MT" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-8 columns"&gt;&lt;img id="bt_copy_estado" src="imagens/copy_clipboard.png" data-clipboard-target="estado" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Telefone:&lt;/strong&gt;
+                &lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="Telefone Fixo" id="telefone_fixo" value="6539104693" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_telefone" src="imagens/copy_clipboard.png" data-clipboard-target="telefone_fixo" class="botao_copiar" title="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Celular:&lt;/strong&gt;
+                &lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="Celular" id="celular" value="65998853419" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_celular" src="imagens/copy_clipboard.png" data-clipboard-target="celular" class="botao_copiar" title="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;: 64</msg>
+<status status="FAIL" starttime="20220415 12:05:52.414" endtime="20220415 12:05:52.415"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${cpf}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" starttime="20220415 12:05:52.416" endtime="20220415 12:05:52.416"/>
+</kw>
+<status status="FAIL" starttime="20220415 12:05:52.414" endtime="20220415 12:05:52.416"/>
+</kw>
+<kw name="Então deve retornar o valor da variável CPF">
+<status status="NOT RUN" starttime="20220415 12:05:52.416" endtime="20220415 12:05:52.416"/>
+</kw>
+<status status="FAIL" starttime="20220415 12:05:52.407" endtime="20220415 12:05:52.417">Resolving variable '${RESPOSTA.json()["cpf"]}' failed: JSONDecodeError: [Errno Extra data] { "nome": "Limite Mínimo a ser gerado é 1 pessoa" }
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Nome:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="Nome" id="nome" value="Breno e Paulo Pães e Doces Ltda" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 columns"&gt;&lt;img id="bt_copy_nome" src="imagens/copy_clipboard.png" data-clipboard-target="nome" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;CNPJ:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="CNPJ" id="cnpj" value="38565656000124" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_cnpj...
+    [ Message content over the limit has been removed. ]
+                &lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="Telefone Fixo" id="telefone_fixo" value="6539104693" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_telefone" src="imagens/copy_clipboard.png" data-clipboard-target="telefone_fixo" class="botao_copiar" title="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Celular:&lt;/strong&gt;
+                &lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="Celular" id="celular" value="65998853419" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_celular" src="imagens/copy_clipboard.png" data-clipboard-target="celular" class="botao_copiar" title="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;: 64</status>
+</test>
+<test id="s1-t5" name="Limpar a variável CPF" line="57">
+<kw name="Dado que tenha sido realizado o POST na API 4DEVS">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>API4DEVS</arg>
+<arg>${url_api}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220415 12:05:52.421" level="INFO">Creating Session using : alias=API4DEVS, url=https://www.4devs.com.br/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220415 12:05:52.421" endtime="20220415 12:05:52.421"/>
+</kw>
+<status status="PASS" starttime="20220415 12:05:52.420" endtime="20220415 12:05:52.422"/>
+</kw>
+<kw name="Quando o valor do campo CPF for gravado na variável CPF">
+<kw name="Convert To String" library="BuiltIn">
+<var>${cpf}</var>
+<arg>${RESPOSTA.json()["cpf"]}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20220415 12:05:52.423" level="FAIL">Resolving variable '${RESPOSTA.json()["cpf"]}' failed: JSONDecodeError: [Errno Extra data] { "nome": "Limite Mínimo a ser gerado é 1 pessoa" }
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Nome:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="Nome" id="nome" value="Breno e Paulo Pães e Doces Ltda" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 columns"&gt;&lt;img id="bt_copy_nome" src="imagens/copy_clipboard.png" data-clipboard-target="nome" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;CNPJ:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="CNPJ" id="cnpj" value="38565656000124" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_cnpj" src="imagens/copy_clipboard.png" data-clipboard-target="cnpj" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Inscrição Estadual:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="Inscrição Estadual" id="ie" value="" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_ie" src="imagens/copy_clipboard.png" data-clipboard-target="ie" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Data de Abertura:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-2 columns"&gt;&lt;input type="text" title="Data de Abertura" id="data_abertura" value="05/08/2022" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-7 columns"&gt;&lt;img id="bt_copy_data_abertura" src="imagens/copy_clipboard.png" data-clipboard-target="data_abertura" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Site:&lt;/strong&gt;
+                &lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="Site" id="site" value="www.brenoepaulopaesedocesltda.com.br" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 columns"&gt;&lt;img id="bt_copy_site" src="imagens/copy_clipboard.png" data-clipboard-target="site" class="botao_copiar" title="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;E-Mail:&lt;/strong&gt;
+                &lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="E-Mail" id="email" value="auditoria@brenoepaulopaesedocesltda.com.br" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 columns"&gt;&lt;img id="bt_copy_email" src="imagens/copy_clipboard.png" data-clipboard-target="email" class="botao_copiar" title="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;CEP:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-2 columns"&gt;&lt;input type="text" title="CEP" id="cep" value="78099451" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-7 columns"&gt;&lt;img id="bt_copy_cep" src="imagens/copy_clipboard.png" data-clipboard-target="cep" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Endereço:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="Endereço" id="endereco" value="Rua 19" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-2 columns"&gt;&lt;img id="bt_copy_endereco" src="imagens/copy_clipboard.png" data-clipboard-target="endereco" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Número:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-2 columns"&gt;&lt;input type="text" title="Número" id="numero" value="260" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-7 columns"&gt;&lt;img id="bt_copy_numero" src="imagens/copy_clipboard.png" data-clipboard-target="numero" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Bairro:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="Bairro" id="bairro" value="Parque Nova Esperança III" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-2 columns"&gt;&lt;img id="bt_copy_bairro" src="imagens/copy_clipboard.png" data-clipboard-target="bairro" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Cidade:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="Cidade" id="cidade" value="Cuiabá" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-2 columns"&gt;&lt;img id="bt_copy_cidade" src="imagens/copy_clipboard.png" data-clipboard-target="cidade" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Estado:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-1 columns"&gt;&lt;input type="text" title="Estado" id="estado" value="MT" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-8 columns"&gt;&lt;img id="bt_copy_estado" src="imagens/copy_clipboard.png" data-clipboard-target="estado" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Telefone:&lt;/strong&gt;
+                &lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="Telefone Fixo" id="telefone_fixo" value="6539104693" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_telefone" src="imagens/copy_clipboard.png" data-clipboard-target="telefone_fixo" class="botao_copiar" title="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Celular:&lt;/strong&gt;
+                &lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="Celular" id="celular" value="65998853419" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_celular" src="imagens/copy_clipboard.png" data-clipboard-target="celular" class="botao_copiar" title="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;: 64</msg>
+<status status="FAIL" starttime="20220415 12:05:52.422" endtime="20220415 12:05:52.423"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${cpf}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" starttime="20220415 12:05:52.423" endtime="20220415 12:05:52.423"/>
+</kw>
+<status status="FAIL" starttime="20220415 12:05:52.422" endtime="20220415 12:05:52.424"/>
+</kw>
+<kw name="Então deve retornar o valor da variável CPF vazio">
+<status status="NOT RUN" starttime="20220415 12:05:52.427" endtime="20220415 12:05:52.427"/>
+</kw>
+<status status="FAIL" starttime="20220415 12:05:52.420" endtime="20220415 12:05:52.429">Resolving variable '${RESPOSTA.json()["cpf"]}' failed: JSONDecodeError: [Errno Extra data] { "nome": "Limite Mínimo a ser gerado é 1 pessoa" }
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Nome:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-7 columns"&gt;&lt;input type="text" title="Nome" id="nome" value="Breno e Paulo Pães e Doces Ltda" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 columns"&gt;&lt;img id="bt_copy_nome" src="imagens/copy_clipboard.png" data-clipboard-target="nome" class="botao_copiar" title="Copiar" alt="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;CNPJ:&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="CNPJ" id="cnpj" value="38565656000124" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_cnpj...
+    [ Message content over the limit has been removed. ]
+                &lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="Telefone Fixo" id="telefone_fixo" value="6539104693" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_telefone" src="imagens/copy_clipboard.png" data-clipboard-target="telefone_fixo" class="botao_copiar" title="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="row small-collapse"&gt;
+                &lt;div class="medium-3 columns medium-text-right"&gt;&lt;strong&gt;Celular:&lt;/strong&gt;
+                &lt;/div&gt;
+                &lt;div class="small-10 medium-3 columns"&gt;&lt;input type="text" title="Celular" id="celular" value="65998853419" onFocus="this.select()" class="margem_menor" /&gt;&lt;/div&gt;
+                &lt;div class="small-2 medium-6 columns"&gt;&lt;img id="bt_copy_celular" src="imagens/copy_clipboard.png" data-clipboard-target="celular" class="botao_copiar" title="Copiar" /&gt;&lt;/div&gt;
+            &lt;/div&gt;: 64</status>
+</test>
+<status status="FAIL" starttime="20220415 12:05:51.378" endtime="20220415 12:05:52.431"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="4" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="4" skip="0" id="s1" name="Teste">Teste</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

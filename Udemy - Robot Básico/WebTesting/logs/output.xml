@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220622 14:23:30.078" rpa="false" schemaversion="3">
+<suite id="s1" name="Amazon Testes" source="C:\Projetos\CursoUdemy\RobotFramework\WebTesting\amazon_testes.robot">
+<test id="s1-t1" name="Caso de Teste 02 - Pesquisa de um produto" line="14">
+<kw name="Abrir o navegador" library="amazon_resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220622 14:23:30.297" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20220622 14:23:30.297" endtime="20220622 14:23:31.881"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220622 14:23:31.881" endtime="20220622 14:23:32.023"/>
+</kw>
+<status status="PASS" starttime="20220622 14:23:30.296" endtime="20220622 14:23:32.025"/>
+</kw>
+<kw name="Acessar a home page do site Amazon.com.br" library="amazon_resources">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220622 14:23:32.027" level="INFO">Opening url 'https://www.amazon.com.br/'</msg>
+<status status="PASS" starttime="20220622 14:23:32.027" endtime="20220622 14:23:34.135"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${HEADER}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220622 14:23:34.135" endtime="20220622 14:23:34.247"/>
+</kw>
+<status status="PASS" starttime="20220622 14:23:32.027" endtime="20220622 14:23:34.247"/>
+</kw>
+<kw name="Digitar o nome de produto &quot;Xbox Series S&quot; no campo de pesquisa" library="amazon_resources" sourcename="Digitar o nome de produto &quot;${PRODUTO}&quot; no campo de pesquisa">
+<kw name="Input Tet">
+<arg>twotabsearchtextbox</arg>
+<arg>${PRODUTO}</arg>
+<msg timestamp="20220622 14:23:34.253" level="FAIL">No keyword with name 'Input Tet' found. Did you mean:
+    SeleniumLibrary.Input Text</msg>
+<status status="FAIL" starttime="20220622 14:23:34.253" endtime="20220622 14:23:34.253"/>
+</kw>
+<status status="FAIL" starttime="20220622 14:23:34.248" endtime="20220622 14:23:34.254"/>
+</kw>
+<kw name="Clicar no botão de pesquisa" library="amazon_resources">
+<status status="NOT RUN" starttime="20220622 14:23:34.255" endtime="20220622 14:23:34.255"/>
+</kw>
+<kw name="Verificar o resultado da pesquisa se está listando o produto &quot;Console Xbox Series S&quot;" library="amazon_resources" sourcename="Verificar o resultado da pesquisa se está listando o produto &quot;${PRODUTO}&quot;">
+<status status="NOT RUN" starttime="20220622 14:23:34.257" endtime="20220622 14:23:34.257"/>
+</kw>
+<kw name="Fechar o navegador" library="amazon_resources" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220622 14:23:34.559" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-106.png"&gt;&lt;img src="selenium-screenshot-106.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220622 14:23:34.259" endtime="20220622 14:23:34.559"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220622 14:23:34.559" endtime="20220622 14:23:36.783"/>
+</kw>
+<status status="PASS" starttime="20220622 14:23:34.259" endtime="20220622 14:23:36.783"/>
+</kw>
+<doc>Este teste verifica a busca de um produto</doc>
+<tag>busca_produtos</tag>
+<tag>lista_produtos</tag>
+<status status="FAIL" starttime="20220622 14:23:30.295" endtime="20220622 14:23:36.784">No keyword with name 'Input Tet' found. Did you mean:
+    SeleniumLibrary.Input Text</status>
+</test>
+<test id="s1-t2" name="Caso de Teste 03 - Adicionar Produto no Carrinho" line="22">
+<kw name="Abrir o navegador" library="amazon_resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220622 14:23:36.790" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20220622 14:23:36.789" endtime="20220622 14:23:38.157"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220622 14:23:38.157" endtime="20220622 14:23:38.298"/>
+</kw>
+<status status="PASS" starttime="20220622 14:23:36.789" endtime="20220622 14:23:38.298"/>
+</kw>
+<kw name="Acessar a home page do site Amazon.com.br" library="amazon_resources">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220622 14:23:38.302" level="INFO">Opening url 'https://www.amazon.com.br/'</msg>
+<status status="PASS" starttime="20220622 14:23:38.301" endtime="20220622 14:23:40.922"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${HEADER}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220622 14:23:40.922" endtime="20220622 14:23:41.040"/>
+</kw>
+<status status="PASS" starttime="20220622 14:23:38.300" endtime="20220622 14:23:41.040"/>
+</kw>
+<kw name="Digitar o nome de produto &quot;Xbox Series S&quot; no campo de pesquisa" library="amazon_resources" sourcename="Digitar o nome de produto &quot;${PRODUTO}&quot; no campo de pesquisa">
+<kw name="Input Tet">
+<arg>twotabsearchtextbox</arg>
+<arg>${PRODUTO}</arg>
+<msg timestamp="20220622 14:23:41.046" level="FAIL">No keyword with name 'Input Tet' found. Did you mean:
+    SeleniumLibrary.Input Text</msg>
+<status status="FAIL" starttime="20220622 14:23:41.046" endtime="20220622 14:23:41.046"/>
+</kw>
+<status status="FAIL" starttime="20220622 14:23:41.041" endtime="20220622 14:23:41.046"/>
+</kw>
+<kw name="Clicar no botão de pesquisa" library="amazon_resources">
+<status status="NOT RUN" starttime="20220622 14:23:41.047" endtime="20220622 14:23:41.047"/>
+</kw>
+<kw name="Verificar o resultado da pesquisa se está listando o produto &quot;Console Xbox Series S&quot;" library="amazon_resources" sourcename="Verificar o resultado da pesquisa se está listando o produto &quot;${PRODUTO}&quot;">
+<status status="NOT RUN" starttime="20220622 14:23:41.047" endtime="20220622 14:23:41.048"/>
+</kw>
+<kw name="Adicionar o produto &quot;Console Xbox Series S&quot; no carrinho" library="amazon_resources" sourcename="Adicionar o produto &quot;${PRODUTO}&quot; no carrinho">
+<status status="NOT RUN" starttime="20220622 14:23:41.048" endtime="20220622 14:23:41.048"/>
+</kw>
+<kw name="Verificar se o produto &quot;Console Xbox Series S&quot; foi adicionado com sucesso" library="amazon_resources" sourcename="Verificar se o produto &quot;${PRODUTO}&quot; foi adicionado com sucesso">
+<status status="NOT RUN" starttime="20220622 14:23:41.049" endtime="20220622 14:23:41.049"/>
+</kw>
+<kw name="Fechar o navegador" library="amazon_resources" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220622 14:23:41.281" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-107.png"&gt;&lt;img src="selenium-screenshot-107.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220622 14:23:41.051" endtime="20220622 14:23:41.281"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220622 14:23:41.281" endtime="20220622 14:23:43.502"/>
+</kw>
+<status status="PASS" starttime="20220622 14:23:41.050" endtime="20220622 14:23:43.503"/>
+</kw>
+<doc>Esse teste verifica a adição de um produto no carrinho de compras</doc>
+<tag>adicionar_carrinho</tag>
+<status status="FAIL" starttime="20220622 14:23:36.788" endtime="20220622 14:23:43.504">No keyword with name 'Input Tet' found. Did you mean:
+    SeleniumLibrary.Input Text</status>
+</test>
+<test id="s1-t3" name="Caso de Teste 04 - Remover Produto do Carrinho" line="32">
+<kw name="Abrir o navegador" library="amazon_resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220622 14:23:43.511" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20220622 14:23:43.510" endtime="20220622 14:23:44.886"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220622 14:23:44.887" endtime="20220622 14:23:45.019"/>
+</kw>
+<status status="PASS" starttime="20220622 14:23:43.510" endtime="20220622 14:23:45.019"/>
+</kw>
+<kw name="Acessar a home page do site Amazon.com.br" library="amazon_resources">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220622 14:23:45.022" level="INFO">Opening url 'https://www.amazon.com.br/'</msg>
+<status status="PASS" starttime="20220622 14:23:45.021" endtime="20220622 14:23:49.099"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${HEADER}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220622 14:23:49.099" endtime="20220622 14:23:49.175"/>
+</kw>
+<status status="PASS" starttime="20220622 14:23:45.021" endtime="20220622 14:23:49.176"/>
+</kw>
+<kw name="Digitar o nome de produto &quot;Xbox Series S&quot; no campo de pesquisa" library="amazon_resources" sourcename="Digitar o nome de produto &quot;${PRODUTO}&quot; no campo de pesquisa">
+<kw name="Input Tet">
+<arg>twotabsearchtextbox</arg>
+<arg>${PRODUTO}</arg>
+<msg timestamp="20220622 14:23:49.187" level="FAIL">No keyword with name 'Input Tet' found. Did you mean:
+    SeleniumLibrary.Input Text</msg>
+<status status="FAIL" starttime="20220622 14:23:49.187" endtime="20220622 14:23:49.188"/>
+</kw>
+<status status="FAIL" starttime="20220622 14:23:49.177" endtime="20220622 14:23:49.189"/>
+</kw>
+<kw name="Clicar no botão de pesquisa" library="amazon_resources">
+<status status="NOT RUN" starttime="20220622 14:23:49.190" endtime="20220622 14:23:49.190"/>
+</kw>
+<kw name="Verificar o resultado da pesquisa se está listando o produto &quot;Console Xbox Series S&quot;" library="amazon_resources" sourcename="Verificar o resultado da pesquisa se está listando o produto &quot;${PRODUTO}&quot;">
+<status status="NOT RUN" starttime="20220622 14:23:49.191" endtime="20220622 14:23:49.191"/>
+</kw>
+<kw name="Adicionar o produto &quot;Console Xbox Series S&quot; no carrinho" library="amazon_resources" sourcename="Adicionar o produto &quot;${PRODUTO}&quot; no carrinho">
+<status status="NOT RUN" starttime="20220622 14:23:49.193" endtime="20220622 14:23:49.193"/>
+</kw>
+<kw name="Verificar se o produto &quot;Console Xbox Series S&quot; foi adicionado com sucesso" library="amazon_resources" sourcename="Verificar se o produto &quot;${PRODUTO}&quot; foi adicionado com sucesso">
+<status status="NOT RUN" starttime="20220622 14:23:49.195" endtime="20220622 14:23:49.195"/>
+</kw>
+<kw name="Remover o produto &quot;Console Xbox Series S&quot; do carrinho" library="amazon_resources">
+<status status="NOT RUN" starttime="20220622 14:23:49.196" endtime="20220622 14:23:49.197"/>
+</kw>
+<kw name="Verificar se o carrinho fica vazio" library="amazon_resources">
+<status status="NOT RUN" starttime="20220622 14:23:49.197" endtime="20220622 14:23:49.198"/>
+</kw>
+<kw name="Fechar o navegador" library="amazon_resources" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220622 14:23:49.509" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-108.png"&gt;&lt;img src="selenium-screenshot-108.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220622 14:23:49.200" endtime="20220622 14:23:49.509"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220622 14:23:49.509" endtime="20220622 14:23:51.735"/>
+</kw>
+<status status="PASS" starttime="20220622 14:23:49.199" endtime="20220622 14:23:51.736"/>
+</kw>
+<doc>Esse teste verifica a remoção de um produto no carrinho de compras</doc>
+<tag>remover_carrinho</tag>
+<status status="FAIL" starttime="20220622 14:23:43.508" endtime="20220622 14:23:51.737">No keyword with name 'Input Tet' found. Did you mean:
+    SeleniumLibrary.Input Text</status>
+</test>
+<doc>Esta suite testa o site da Amazon</doc>
+<status status="FAIL" starttime="20220622 14:23:30.080" endtime="20220622 14:23:51.744"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">adicionar_carrinho</stat>
+<stat pass="0" fail="1" skip="0">busca_produtos</stat>
+<stat pass="0" fail="1" skip="0">lista_produtos</stat>
+<stat pass="0" fail="1" skip="0">remover_carrinho</stat>
+</tag>
+<suite>
+<stat pass="0" fail="3" skip="0" id="s1" name="Amazon Testes">Amazon Testes</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
